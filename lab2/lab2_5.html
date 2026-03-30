@@ -6,6 +6,7 @@
     <title>Форма регистрации</title>
 
     <style>
+        
         /* Стили для отступов между полями формы */
         form div {
             margin-bottom: 10px; /* Отступ между полями */
@@ -19,9 +20,9 @@
         /* Новые стили: подпись слева от поля */
         .inline-label {
             display: inline-block;
-            width: 100px; /* Фиксированная ширина для выравнивания */
+            width: 70px; /* Фиксированная ширина для выравнивания */
             text-align: right; /* Выравниваем текст вправо */
-            margin-right: 10px; /* Отступ от поля ввода */
+            margin-right: 15px; /* Отступ от поля ввода */
         }
 
         input[type="text"],
@@ -35,6 +36,7 @@
 
         /* Стиль для рамки вокруг всей формы */
         form {
+            width: 500px;
             border: 3px solid #0044ff; /* Синяя рамка */
             padding: 20px; /* Внутренний отступ, чтобы содержимое не прилипало к рамке */
             border-radius: 10px; /* Скругление углов рамки */
@@ -95,9 +97,10 @@
 
             <!-- Дополнительные опции -->
             <div class="form-group language-group">
-                <label class="inline-label">Я знаю:</label>
                 <!-- Блок с выбором языков теперь просто следует за меткой -->
                 <div style="display: inline-block;">
+                    <label> Я знаю:</label>
+                    <br><br>
                     <label for="lang-ru">Русский</label><br> <!-- Тег <br> переносит на новую строку -->
                     <input type="checkbox" id="lang-ru" name="language" value="ru"><br>
                     
