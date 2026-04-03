@@ -23,32 +23,52 @@
             width: 70px; /* Фиксированная ширина для выравнивания */
             text-align: right; /* Выравниваем текст вправо */
             margin-right: 15px; /* Отступ от поля ввода */
+            
         }
-
+        
         input[type="text"],
         input[type="email"],
         input[type="password"],
+        
         textarea {
             padding: 5px;
             border: 2px solid #0044ff;
             border-radius: 7px;
         }
-
+        
         /* Стиль для рамки вокруг всей формы */
-        form {
+        form{
             width: 500px;
-            border: 3px solid #0044ff; /* Синяя рамка */
+            border: 3px solid #4d7dff; /* Синяя рамка */
             padding: 20px; /* Внутренний отступ, чтобы содержимое не прилипало к рамке */
             border-radius: 10px; /* Скругление углов рамки */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрируем содержимое по горизонтали */
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: center; /* Выравниваем блок с кнопками по центру */
+            margin-top: 15px; /* Отступ сверху */
+            gap: 10px; /* Расстояние между кнопками */
+        }
+        .aboutme{
+            display: inline-block;
+            width: 70px; /* Фиксированная ширина для выравнивания */
+            text-align: right; /* Выравниваем текст вправо */
+            margin-right: 15px; /* Отступ от поля ввода */
+            
         }
     </style>
 </head>
 
 <body>
-    <center>
+    <div style="display: flex; flex-direction: column; align-items: center;">
         <h1>Форма регистрации</h1>
-
-        <hr size="5" color="blue">
+    </div>
+    <hr style = "border-width: 3px; border-color:rgb(65, 65, 255);">
+    <div style= "display: flex; flex-direction: column; align-items: center;">
 
         <form action="DATA.php" method="POST">
             <!-- Поля ввода данных -->
@@ -62,7 +82,7 @@
                 <input type="email" id="email" name="email" required placeholder="Введите email">
             </div>
 
-            <div class="form-group">
+            <div>
                 <label for="password" class="inline-label">Пароль:</label>
                 <input type="password" id="password" name="password" required placeholder="Введите пароль">
             </div>
@@ -96,32 +116,38 @@
              </div>
 
             <!-- Дополнительные опции -->
-            <div class="form-group language-group">
+            <div class="language-group">
                 <!-- Блок с выбором языков теперь просто следует за меткой -->
                 <div style="display: inline-block;">
                     <label> Я знаю:</label>
-                    <br><br>
-                    <label for="lang-ru">Русский</label><br> <!-- Тег <br> переносит на новую строку -->
-                    <input type="checkbox" id="lang-ru" name="language" value="ru"><br>
+                    <br>
+                    <label for="lang-ru">Русский</label>
+                    <input type="checkbox" id="lang-ru" name="language" value="ru" checked disabled><br>
                     
-                    <label for="lang-en">Английский</label><br>
+                    <label for="lang-en">Английский</label>
                     <input type="checkbox" id="lang-en" name="language" value="en"><br>
                     
-                    <label for="lang-fr">Французский</label><br>
+                    <label for="lang-fr">Французский</label>
                     <input type="checkbox" id="lang-fr" name="language" value="fr"><br>
+                    
+                    <label for="lang-sp">Испанский</label>
+                    <input type="checkbox" id="lang-sp" name="language" value="sp"><br>
                 </div>
             </div>
 
              <!-- Новое поле "О себе" -->
-             <div class="form-group">
-                 <label for="about" class="inline-label">О себе:</label>
-                 <textarea id="about" name="about" rows="2"></textarea> <!-- Многострочное поле для текста -->
-             </div>
+             <div>
+                <label for="about" class="aboutme">О себе:</label>
+                
+                <textarea id="about" name="about" required placeholder="Кратко расскажите о себе" rows="2"></textarea>
+            </div>
 
-            <!-- Кнопка отправки -->
-            <button type="submit">Отправить</button>
-            <button type="reset">Очистить</button>
+            <!-- Кнопки отправки -->
+            <div class="button-group">
+                <button type="submit">Отправить</button>
+                <button type="reset">Очистить</button>
+            </div>
         </form>
-    </center>
+    </div>
 </body>
 </html>
